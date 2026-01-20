@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Long Boi - Virtual Pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap');
+      
+      body {
+        font-family: 'Fredoka', sans-serif;
+        overflow: hidden; /* Prevent scrolling for app-like feel */
+        touch-action: none; /* Prevent zoom/scroll on mobile */
+      }
+
+      /* Custom animations for the character */
+      @keyframes breathe {
+        0%, 100% { transform: scale(1, 1); }
+        50% { transform: scale(1.02, 0.98); }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .animate-breathe {
+        animation: breathe 3s infinite ease-in-out;
+      }
+      
+      .animate-float {
+        animation: float 4s infinite ease-in-out;
+      }
+
+      /* Squishy transitions */
+      .squishy {
+        transition: all 0.3s cubic-bezier(0.25, 1.5, 0.5, 1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-blue-200">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
